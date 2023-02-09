@@ -4,6 +4,7 @@ import "./App.css";
 function App(): JSX.Element {
     return (
         <div className="App">
+            <h1 className="name">Eric Tlaseca</h1>
             <header className="App-header">
                 UD CISC275 with React Hooks and TypeScript
             </header>
