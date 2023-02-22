@@ -22,19 +22,25 @@ export function add3(first: number, second: number, third: number): number {
     //         summ += nums[i];
     //     }
     // }
-    // let sum: number;
-    // if (first > 0 && second > 0 && third > 0) {
-    //     sum = first + second + third;
-    // } else if (first > 0 && second > 0 && third < 0) {
-    //     sum = first + second;
-    // } else if (first > 0 && second < 0 && third > 0) {
-    //     sum = first + third;
-    // } else if (first < 0 && second > 0 && third > 0) {
-    //     sum = second + third;
-    // } else {
-    //     sum = 0;
-    // }
-    return 0;
+    let sum: number;
+    if (first > 0 && second > 0 && third > 0) {
+        sum = first + second + third;
+    } else if (first > 0 && second > 0 && third < 0) {
+        sum = first + second;
+    } else if (first > 0 && second < 0 && third > 0) {
+        sum = first + third;
+    } else if (first < 0 && second > 0 && third > 0) {
+        sum = second + third;
+    } else if (first < 0 && second < 0 && third > 0) {
+        sum = third;
+    } else if (first < 0 && second > 0 && third < 0) {
+        sum = second;
+    } else if (first > 0 && second < 0 && third < 0) {
+        sum = first;
+    } else {
+        sum = 0;
+    }
+    return sum;
 }
 
 /**
@@ -42,7 +48,8 @@ export function add3(first: number, second: number, third: number): number {
  * mark added to the end.
  */
 export function shout(message: string): string {
-    return "";
+    const mesagup: string = message.toUpperCase();
+    return mesagup + "!";
 }
 
 /**
