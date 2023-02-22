@@ -4,7 +4,10 @@
  *      C = (F - 32) * 5/9
  */
 export function fahrenheitToCelius(temperature: number): number {
-    return 0;
+    const subtractor: number = temperature - 32;
+    const divisor: number = 5 / 9;
+    const formula: number = subtractor * divisor;
+    return formula;
 }
 
 /**
@@ -12,6 +15,25 @@ export function fahrenheitToCelius(temperature: number): number {
  * if the number is greater than zero.
  */
 export function add3(first: number, second: number, third: number): number {
+    // const nums: Array<number> = [first, second, third];
+    // let summ : number = 0.0;
+    // for (let i = 0; i < nums.length; i++) {
+    //     if (nums[i] > 0) {
+    //         summ += nums[i];
+    //     }
+    // }
+    // let sum: number;
+    // if (first > 0 && second > 0 && third > 0) {
+    //     sum = first + second + third;
+    // } else if (first > 0 && second > 0 && third < 0) {
+    //     sum = first + second;
+    // } else if (first > 0 && second < 0 && third > 0) {
+    //     sum = first + third;
+    // } else if (first < 0 && second > 0 && third > 0) {
+    //     sum = second + third;
+    // } else {
+    //     sum = 0;
+    // }
     return 0;
 }
 
