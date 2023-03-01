@@ -78,7 +78,17 @@ export const removeDollars = (amounts: string[]): number[] => {
  * in question marks ("?").
  */
 export const shoutIfExclaiming = (messages: string[]): string[] => {
-    return [];
+    const clonedMessages = [...messages];
+    const toUp = clonedMessages.map((element: string): string =>
+        element[element.length - 1] == "!"
+            ? element.replace(element, element.toUpperCase())
+            : element
+    );
+    const removeQuestion = toUp.filter(
+        (elementN: string): boolean => elementN[elementN.length - 1] != "?"
+    );
+
+    return removeQuestion;
 };
 
 /**
@@ -86,16 +96,29 @@ export const shoutIfExclaiming = (messages: string[]): string[] => {
  * 4 letters long.
  */
 export function countShortWords(words: string[]): number {
-    return 0;
+    const wordsCopy = [...words];
+    // eslint-disable-next-line @typescript-eslint/no-inferrable-types
+    const removeLarger4 = wordsCopy.filter(
+        (elementN: string): boolean => elementN.length < 4
+    );
+    return removeLarger4.length;
 }
 
 /**
  * Consumes an array of colors (e.g., 'red', 'purple') and returns true if ALL
  * the colors are either 'red', 'blue', or 'green'. If an empty list is given,
  * then return true.
+ * so if it all elemenet of array consist of 'red', 'blue', or 'green'
+ * i.e: ["red","blue","green","red"] => true ["red","purple","blue","green"] =>false
  */
 export function allRGB(colors: string[]): boolean {
-    return false;
+    const allRGB = colors.every(
+        (color: string): boolean =>
+            color.toLowerCase() == "red" ||
+            color.toLowerCase() == "blue" ||
+            color.toLowerCase() == "green"
+    );
+    return allRGB;
 }
 
 /**
