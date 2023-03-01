@@ -175,5 +175,35 @@ export function injectPositive(values: number[]): number[] {
      * step 4: GOOD JOB PAL, YOUR DONE
      * step 5: if no negatives, push total to end of list
      */
-    return [];
+    const valuesCopy = [...values];
+    const firstNegativeIndex = valuesCopy.findIndex(
+        (num: number): boolean => num < 0
+    );
+    if (firstNegativeIndex == -1) {
+        const sum = valuesCopy.reduce(
+            (currentTotal: number, num: number) => currentTotal + num,
+            0
+        );
+        return [...valuesCopy, sum];
+    } else {
+        console.log(firstNegativeIndex);
+        const sum = valuesCopy.reduce(
+            (currentTotal: number, num: number, ind: number) =>
+                ind < firstNegativeIndex ? currentTotal + num : currentTotal + 0
+        );
+
+        // console.log(valuesCopy.splice(firstNegativeIndex, 0, sum));
+        // -100, 0, -200, 100, 200
+        console.log(valuesCopy);
+        console.log(sum);
+        // console.log(valuesCopy);
+        if (firstNegativeIndex == 0) {
+            valuesCopy.splice(firstNegativeIndex + 1, 0, 0);
+            return valuesCopy;
+        }
+        valuesCopy.splice(firstNegativeIndex + 1, 0, sum);
+        console.log(valuesCopy);
+        // console.log(valuesCopy.splice(firstNegativeIndex + 1, 0, sum));
+        return valuesCopy;
+    }
 }
