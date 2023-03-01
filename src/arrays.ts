@@ -5,7 +5,15 @@
  * the number twice.
  */
 export function bookEndList(numbers: number[]): number[] {
-    return numbers;
+    if (numbers.length == 0) {
+        return [];
+    } else if (numbers.length == 1) {
+        const clonedNumbers = [...numbers, numbers[0]];
+        return clonedNumbers;
+    } else {
+        const clonedNumbers = [...numbers];
+        return [clonedNumbers[0], clonedNumbers[clonedNumbers.length - 1]];
+    }
 }
 
 /**
@@ -13,7 +21,13 @@ export function bookEndList(numbers: number[]): number[] {
  * number has been tripled (multiplied by 3).
  */
 export function tripleNumbers(numbers: number[]): number[] {
-    return numbers;
+    // this will require a map
+
+    const clonedNumbers = [...numbers];
+    const tripledNumbers = clonedNumbers.map(
+        (elementN: number): number => elementN * 3
+    );
+    return tripledNumbers;
 }
 
 /**
@@ -21,7 +35,19 @@ export function tripleNumbers(numbers: number[]): number[] {
  * the number cannot be parsed as an integer, convert it to 0 instead.
  */
 export function stringsToIntegers(numbers: string[]): number[] {
-    return [];
+    //we need to iterate through the array and see which ones are letters
+    // as we find the ones that are letters, we replace with str(0)
+    //afterwards we map the array and convert every element to int
+    const clonedNumbers = [...numbers];
+    const toNumbers = clonedNumbers.map((elementN: string): number =>
+        parseInt(elementN)
+    );
+    const replaceNaNum = toNumbers.map((elementNum: number): number =>
+        elementNum != elementNum ? (elementNum = 0) : elementNum
+    );
+
+    return replaceNaNum;
+    // return [1, 2];
 }
 
 /**
