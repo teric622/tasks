@@ -127,9 +127,35 @@ export function allRGB(colors: string[]): boolean {
  *
  * For instance, the array [1, 2, 3] would become "6=1+2+3".
  * And the array [] would become "0=0".
+ * sum=n1+n2+n3...nk
  */
 export function makeMath(addends: number[]): string {
-    return "";
+    if (addends.length == 0) {
+        return "0=0";
+    } else {
+        const sum = addends.reduce(
+            (currentTotal: number, num: number) => currentTotal + num,
+            0
+        );
+        const clonedAddends = [...addends];
+        const fetchNumsAdded = clonedAddends.map((elementN: number): string =>
+            elementN.toString() !=
+            clonedAddends[clonedAddends.length - 1].toString()
+                ? elementN.toString() + "+"
+                : elementN.toString()
+        );
+        return sum.toString() + "=" + fetchNumsAdded.join("");
+        /**
+         * process:
+         * 1: first need to map through array and obtain the sum of all values and store
+         * that value in a let variable
+         * 2:create a string with the format "sum="
+         * 3: turn every element of the array into a string
+         * 4: after every element add + to it except for the last element
+         * 3 & 4: element.tostring()+"+"
+         *
+         */
+    }
 }
 
 /**
@@ -142,5 +168,12 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
+    /**
+     * step 1: Find the FIRST instance of a negative number and return the index at which it occured
+     * step 2: map through array and sum every number up to the point where you found the negative
+     * step 3: make copy of array and insert the sum after the index where first negative was found
+     * step 4: GOOD JOB PAL, YOUR DONE
+     * step 5: if no negatives, push total to end of list
+     */
     return [];
 }
