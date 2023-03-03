@@ -11,56 +11,121 @@ PASS src/arrays.test.ts
     console.log
       3
 
-      at injectPositive (src/arrays.ts:189:17)
-
-    console.log
-      [ 100, 199, 1, -5, 7, 3 ]
-
-      at injectPositive (src/arrays.ts:197:17)
-
-    console.log
-      300
-
-      at injectPositive (src/arrays.ts:198:17)
-
-    console.log
-      [
-        100, 199, 1, -5,
-        300,   7, 3
-      ]
-
-      at injectPositive (src/arrays.ts:205:17)
+      at injectPositive (src/arrays.ts:194:17)
 
     console.log
       0
 
-      at injectPositive (src/arrays.ts:189:17)
+      at injectPositive (src/arrays.ts:194:17)
+
+PASS src/objects.test.ts
+  ● Console
 
     console.log
-      [ -100, -200, 100, 200 ]
+      Addition
 
-      at injectPositive (src/arrays.ts:197:17)
+      at toShortForm (src/objects.ts:86:13)
 
     console.log
-      -100
+      1: Addition
 
-      at injectPositive (src/arrays.ts:198:17)
+      at toShortForm (src/objects.ts:88:13)
+
+    console.log
+      Letters
+
+      at toShortForm (src/objects.ts:86:13)
+
+    console.log
+      2: Letters
+
+      at toShortForm (src/objects.ts:88:13)
+
+    console.log
+      Colors
+
+      at toShortForm (src/objects.ts:86:13)
+
+    console.log
+      5: Colors
+
+      at toShortForm (src/objects.ts:88:13)
+
+    console.log
+      Shapes
+
+      at toShortForm (src/objects.ts:86:13)
+
+    console.log
+      9: Shapes
+
+      at toShortForm (src/objects.ts:88:13)
+
+    console.log
+      My New Que
+
+      at toShortForm (src/objects.ts:86:13)
+
+    console.log
+      47: My New Que
+
+      at toShortForm (src/objects.ts:88:13)
+
+    console.log
+
+
+      at toMarkdown (src/objects.ts:128:13)
+
+    console.log
+
+
+      at toMarkdown (src/objects.ts:128:13)
+
+    console.log
+      
+      - red
+      - apple
+      - firetruck
+
+      at toMarkdown (src/objects.ts:128:13)
+
+    console.log
+      
+      - square
+      - triangle
+      - circle
+
+      at toMarkdown (src/objects.ts:128:13)
+
+    console.log
+      Copy of Addition 9
+
+      at duplicateQuestion (src/objects.ts:171:13)
+
+    console.log
+      Copy of Letters 55
+
+      at duplicateQuestion (src/objects.ts:171:13)
 
 PASS src/HtmlCss.test.tsx
 PASS src/functions.test.ts
 PASS src/text.test.tsx
 PASS src/App.test.tsx
---------------|---------|----------|---------|---------|-------------------
-File          | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
---------------|---------|----------|---------|---------|-------------------
-All files     |   97.02 |       90 |     100 |   97.02 |                   
- App.tsx      |     100 |      100 |     100 |     100 |                   
- arrays.ts    |     100 |      100 |     100 |     100 |                   
- functions.ts |    90.9 |    84.44 |     100 |    90.9 | 33,37,39          
---------------|---------|----------|---------|---------|-------------------
+----------------|---------|----------|---------|---------|-------------------
+File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------------|---------|----------|---------|---------|-------------------
+All files       |   97.98 |    91.25 |     100 |   97.98 |                   
+ src            |   97.98 |    91.25 |     100 |   97.98 |                   
+  App.tsx       |     100 |      100 |     100 |     100 |                   
+  arrays.ts     |     100 |      100 |     100 |     100 |                   
+  functions.ts  |    90.9 |    84.44 |     100 |    90.9 | 33,37,39          
+  objects.ts    |     100 |      100 |     100 |     100 |                   
+ src/interfaces |       0 |        0 |       0 |       0 |                   
+  question.ts   |       0 |        0 |       0 |       0 |                   
+----------------|---------|----------|---------|---------|-------------------
 
-Test Suites: 5 passed, 5 total
-Tests:       23 passed, 23 total
+Test Suites: 6 passed, 6 total
+Tests:       33 passed, 33 total
 Snapshots:   0 total
-Time:        4.03 s
+Time:        4.739 s
 Ran all test suites.
