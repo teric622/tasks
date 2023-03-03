@@ -10,7 +10,16 @@ export function makeBlankQuestion(
     name: string,
     type: QuestionType
 ): Question {
-    return {};
+    return {
+        id,
+        name,
+        type,
+        body: "",
+        expected: "",
+        options: [],
+        points: 1,
+        published: false
+    };
 }
 
 /**
@@ -21,6 +30,11 @@ export function makeBlankQuestion(
  * HINT: Look up the `trim` and `toLowerCase` functions.
  */
 export function isCorrect(question: Question, answer: string): boolean {
+    const toCompareQuestion: string = question.expected.trim().toLowerCase();
+    const toComareAnswer: string = answer.trim().toLowerCase();
+    if (toCompareQuestion == toComareAnswer) {
+        return true;
+    }
     return false;
 }
 
@@ -31,9 +45,34 @@ export function isCorrect(question: Question, answer: string): boolean {
  * be exactly one of the options.
  */
 export function isValid(question: Question, answer: string): boolean {
-    return false;
-}
+    // eslint-disable-next-line @typescript-eslint/no-inferrable-types
+    let final: boolean = true;
+    if (question.type == "multiple_choice_question") {
+        // const answerToFind: string = answer.trim().toLowerCase();
+        const questionCopy: Question = { ...question };
+        const optionsCopy: string[] = [...questionCopy.options];
+        // const cleanCopy: string[] = optionsCopy.map((answero: string): string =>
+        //     answero.trim().toLowerCase()
+        // );
 
+        if (
+            optionsCopy.findIndex(
+                (option: string): boolean => option == answer
+            ) == -1
+        ) {
+            // console.log("NO MATCH OM OPTIONS");
+            final = false;
+        } else {
+            // console.log("MATCH OM OPTIONS");
+            final = true;
+        }
+    }
+    if (question.type == "short_answer_question") {
+        // console.log("SHORT ANSWER CORRECT");
+        final = true;
+    }
+    return final;
+}
 /**
  * Consumes a question and produces a string representation combining the
  * `id` and first 10 characters of the `name`. The two strings should be
@@ -41,7 +80,13 @@ export function isValid(question: Question, answer: string): boolean {
  * name "My First Question" would become "9: My First Q".
  */
 export function toShortForm(question: Question): string {
-    return "";
+    const copyQuestion: Question = { ...question };
+    const copyName: string = copyQuestion.name;
+    const first10Char: string = copyName.substring(0, 10);
+    console.log(first10Char);
+    const convertedId: string = copyQuestion.id.toString() + ": ";
+    console.log(convertedId + first10Char);
+    return convertedId + first10Char;
 }
 
 /**
@@ -60,9 +105,28 @@ export function toShortForm(question: Question): string {
  * |- Option 3                  |
  * ------------------------------
  * Check the unit tests for more examples of what this looks like!
+ * `Hello, ${name}`
  */
 export function toMarkdown(question: Question): string {
-    return "";
+    /**
+     *"# " + question.name + /n
+     * handeling options
+     * if multiple choice:
+     * options is an array
+     * for each element add {option} + -  new line \n except for the last element in the array
+     */
+    const questionCopy: Question = { ...question };
+    const bodyPart = questionCopy.body;
+    const optionsCopy: string[] = [...questionCopy.options];
+    // console.log(optionsCopy);
+    const updateTest: string[] = optionsCopy.map(
+        (option: string): string => "\n- " + option
+    );
+    const toj = updateTest.join("");
+    const name = question.name + "\n";
+    const test = `# ${name}`;
+    console.log(toj);
+    return test + bodyPart + toj;
 }
 
 /**
@@ -70,7 +134,8 @@ export function toMarkdown(question: Question): string {
  * `newName`.
  */
 export function renameQuestion(question: Question, newName: string): Question {
-    return question;
+    const copyQuestion: Question = { ...question, name: newName };
+    return copyQuestion;
 }
 
 /**
@@ -79,7 +144,14 @@ export function renameQuestion(question: Question, newName: string): Question {
  * published; if it was published, now it should be not published.
  */
 export function publishQuestion(question: Question): Question {
-    return question;
+    // const copyQuestion: Question = { ...question };
+    if (question.published == false) {
+        const copyQuestion: Question = { ...question, published: true };
+        return copyQuestion;
+    } else {
+        const copyQuestion: Question = { ...question, published: false };
+        return copyQuestion;
+    }
 }
 
 /**
@@ -89,7 +161,15 @@ export function publishQuestion(question: Question): Question {
  * The `published` field should be reset to false.
  */
 export function duplicateQuestion(id: number, oldQuestion: Question): Question {
-    return oldQuestion;
+    const copyOfSentence: string = "Copy of " + oldQuestion.name;
+    const newQuestion: Question = {
+        ...oldQuestion,
+        name: copyOfSentence,
+        id: id,
+        published: false
+    };
+    console.log(newQuestion.name, newQuestion.id);
+    return newQuestion;
 }
 
 /**
@@ -100,7 +180,11 @@ export function duplicateQuestion(id: number, oldQuestion: Question): Question {
  * Check out the subsection about "Nested Fields" for more information.
  */
 export function addOption(question: Question, newOption: string): Question {
-    return question;
+    const trial = { ...question };
+    const trialarr = [...trial.options];
+    const clean = [...trialarr, newOption];
+    const newQuestion = { ...question, options: clean };
+    return newQuestion;
 }
 
 /**
@@ -117,5 +201,14 @@ export function mergeQuestion(
     contentQuestion: Question,
     { points }: { points: number }
 ): Question {
-    return contentQuestion;
+    return {
+        id: id,
+        name: name,
+        type: contentQuestion.type,
+        body: contentQuestion.body,
+        expected: contentQuestion.expected,
+        options: contentQuestion.options,
+        points: points,
+        published: false
+    };
 }
