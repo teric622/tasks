@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 /**
  * Consume an array of numbers, and return a new array containing
  * JUST the first and last number. If there are no elements, return
@@ -8,10 +9,10 @@ export function bookEndList(numbers: number[]): number[] {
     if (numbers.length == 0) {
         return [];
     } else if (numbers.length == 1) {
-        const clonedNumbers = [...numbers, numbers[0]];
+        const clonedNumbers: number[] = [...numbers, numbers[0]];
         return clonedNumbers;
     } else {
-        const clonedNumbers = [...numbers];
+        const clonedNumbers: number[] = [...numbers];
         return [clonedNumbers[0], clonedNumbers[clonedNumbers.length - 1]];
     }
 }
@@ -23,8 +24,8 @@ export function bookEndList(numbers: number[]): number[] {
 export function tripleNumbers(numbers: number[]): number[] {
     // this will require a map
 
-    const clonedNumbers = [...numbers];
-    const tripledNumbers = clonedNumbers.map(
+    const clonedNumbers: number[] = [...numbers];
+    const tripledNumbers: number[] = clonedNumbers.map(
         (elementN: number): number => elementN * 3
     );
     return tripledNumbers;
@@ -38,11 +39,11 @@ export function stringsToIntegers(numbers: string[]): number[] {
     //we need to iterate through the array and see which ones are letters
     // as we find the ones that are letters, we replace with str(0)
     //afterwards we map the array and convert every element to int
-    const clonedNumbers = [...numbers];
-    const toNumbers = clonedNumbers.map((elementN: string): number =>
+    const clonedNumbers: string[] = [...numbers];
+    const toNumbers: number[] = clonedNumbers.map((elementN: string): number =>
         parseInt(elementN)
     );
-    const replaceNaNum = toNumbers.map((elementNum: number): number =>
+    const replaceNaNum: number[] = toNumbers.map((elementNum: number): number =>
         elementNum != elementNum ? (elementNum = 0) : elementNum
     );
 
@@ -58,15 +59,18 @@ export function stringsToIntegers(numbers: string[]): number[] {
  */
 // Remember, you can write functions as lambdas too! They work exactly the same.
 export const removeDollars = (amounts: string[]): number[] => {
-    const clonedAmounts = [...amounts];
-    const RemoveDollars = clonedAmounts.map((elementAmount: string): string =>
-        elementAmount[0] == "$" ? elementAmount.replace("$", "") : elementAmount
+    const clonedAmounts: string[] = [...amounts];
+    const RemoveDollars: string[] = clonedAmounts.map(
+        (elementAmount: string): string =>
+            elementAmount[0] == "$"
+                ? elementAmount.replace("$", "")
+                : elementAmount
     );
-    const toNumbers = RemoveDollars.map((elementN: string): number =>
+    const toNumbers: number[] = RemoveDollars.map((elementN: string): number =>
         parseInt(elementN)
     );
 
-    const replaceNaNum = toNumbers.map((elementNum: number): number =>
+    const replaceNaNum: number[] = toNumbers.map((elementNum: number): number =>
         elementNum != elementNum ? (elementNum = 0) : elementNum
     );
     return replaceNaNum;
@@ -78,13 +82,13 @@ export const removeDollars = (amounts: string[]): number[] => {
  * in question marks ("?").
  */
 export const shoutIfExclaiming = (messages: string[]): string[] => {
-    const clonedMessages = [...messages];
-    const toUp = clonedMessages.map((element: string): string =>
+    const clonedMessages: string[] = [...messages];
+    const toUp: string[] = clonedMessages.map((element: string): string =>
         element[element.length - 1] == "!"
             ? element.replace(element, element.toUpperCase())
             : element
     );
-    const removeQuestion = toUp.filter(
+    const removeQuestion: string[] = toUp.filter(
         (elementN: string): boolean => elementN[elementN.length - 1] != "?"
     );
 
@@ -96,9 +100,9 @@ export const shoutIfExclaiming = (messages: string[]): string[] => {
  * 4 letters long.
  */
 export function countShortWords(words: string[]): number {
-    const wordsCopy = [...words];
+    const wordsCopy: string[] = [...words];
     // eslint-disable-next-line @typescript-eslint/no-inferrable-types
-    const removeLarger4 = wordsCopy.filter(
+    const removeLarger4: string[] = wordsCopy.filter(
         (elementN: string): boolean => elementN.length < 4
     );
     return removeLarger4.length;
@@ -112,7 +116,7 @@ export function countShortWords(words: string[]): number {
  * i.e: ["red","blue","green","red"] => true ["red","purple","blue","green"] =>false
  */
 export function allRGB(colors: string[]): boolean {
-    const allRGB = colors.every(
+    const allRGB: boolean = colors.every(
         (color: string): boolean =>
             color.toLowerCase() == "red" ||
             color.toLowerCase() == "blue" ||
@@ -133,16 +137,17 @@ export function makeMath(addends: number[]): string {
     if (addends.length == 0) {
         return "0=0";
     } else {
-        const sum = addends.reduce(
+        const sum: number = addends.reduce(
             (currentTotal: number, num: number) => currentTotal + num,
             0
         );
-        const clonedAddends = [...addends];
-        const fetchNumsAdded = clonedAddends.map((elementN: number): string =>
-            elementN.toString() !=
-            clonedAddends[clonedAddends.length - 1].toString()
-                ? elementN.toString() + "+"
-                : elementN.toString()
+        const clonedAddends: number[] = [...addends];
+        const fetchNumsAdded: string[] = clonedAddends.map(
+            (elementN: number): string =>
+                elementN.toString() !=
+                clonedAddends[clonedAddends.length - 1].toString()
+                    ? elementN.toString() + "+"
+                    : elementN.toString()
         );
         return sum.toString() + "=" + fetchNumsAdded.join("");
         /**
@@ -175,34 +180,34 @@ export function injectPositive(values: number[]): number[] {
      * step 4: GOOD JOB PAL, YOUR DONE
      * step 5: if no negatives, push total to end of list
      */
-    const valuesCopy = [...values];
-    const firstNegativeIndex = valuesCopy.findIndex(
+    const valuesCopy: number[] = [...values];
+    const firstNegativeIndex: number = valuesCopy.findIndex(
         (num: number): boolean => num < 0
     );
     if (firstNegativeIndex == -1) {
-        const sum = valuesCopy.reduce(
+        const sum: number = valuesCopy.reduce(
             (currentTotal: number, num: number) => currentTotal + num,
             0
         );
         return [...valuesCopy, sum];
     } else {
         console.log(firstNegativeIndex);
-        const sum = valuesCopy.reduce(
+        const sum: number = valuesCopy.reduce(
             (currentTotal: number, num: number, ind: number) =>
                 ind < firstNegativeIndex ? currentTotal + num : currentTotal + 0
         );
 
         // console.log(valuesCopy.splice(firstNegativeIndex, 0, sum));
         // -100, 0, -200, 100, 200
-        console.log(valuesCopy);
-        console.log(sum);
+        // console.log(valuesCopy);
+        // console.log(sum);
         // console.log(valuesCopy);
         if (firstNegativeIndex == 0) {
             valuesCopy.splice(firstNegativeIndex + 1, 0, 0);
             return valuesCopy;
         }
         valuesCopy.splice(firstNegativeIndex + 1, 0, sum);
-        console.log(valuesCopy);
+        // console.log(valuesCopy);
         // console.log(valuesCopy.splice(firstNegativeIndex + 1, 0, sum));
         return valuesCopy;
     }
