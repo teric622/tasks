@@ -1,5 +1,5 @@
 /* eslint-disable indent */
-import { Console } from "console";
+// import { Console } from "console";
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
 import { makeBlankQuestion } from "./objects";
