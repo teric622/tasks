@@ -191,7 +191,7 @@ export function injectPositive(values: number[]): number[] {
         );
         return [...valuesCopy, sum];
     } else {
-        console.log(firstNegativeIndex);
+        // console.log(firstNegativeIndex);
         const sum: number = valuesCopy.reduce(
             (currentTotal: number, num: number, ind: number) =>
                 ind < firstNegativeIndex ? currentTotal + num : currentTotal + 0
