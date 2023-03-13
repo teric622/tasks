@@ -83,9 +83,9 @@ export function toShortForm(question: Question): string {
     const copyQuestion: Question = { ...question };
     const copyName: string = copyQuestion.name;
     const first10Char: string = copyName.substring(0, 10);
-    console.log(first10Char);
+    // console.log(first10Char);
     const convertedId: string = copyQuestion.id.toString() + ": ";
-    console.log(convertedId + first10Char);
+    // console.log(convertedId + first10Char);
     return convertedId + first10Char;
 }
 
@@ -125,7 +125,7 @@ export function toMarkdown(question: Question): string {
     const toj = updateTest.join("");
     const name = question.name + "\n";
     const test = `# ${name}`;
-    console.log(toj);
+    // console.log(toj);
     return test + bodyPart + toj;
 }
 
