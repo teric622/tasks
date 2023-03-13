@@ -5,97 +5,27 @@
 Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
-PASS src/arrays.test.ts
+PASS src/nested.test.ts
   ● Console
 
     console.log
-      3
+      Copy of Question 1 27
 
-      at injectPositive (src/arrays.ts:194:17)
+      at duplicateQuestion (src/objects.ts:171:13)
 
     console.log
-      0
+      Copy of My New Question 19
 
-      at injectPositive (src/arrays.ts:194:17)
+      at duplicateQuestion (src/objects.ts:171:13)
 
+    console.log
+      Copy of Goats 111
+
+      at duplicateQuestion (src/objects.ts:171:13)
+
+PASS src/arrays.test.ts
 PASS src/objects.test.ts
   ● Console
-
-    console.log
-      Addition
-
-      at toShortForm (src/objects.ts:86:13)
-
-    console.log
-      1: Addition
-
-      at toShortForm (src/objects.ts:88:13)
-
-    console.log
-      Letters
-
-      at toShortForm (src/objects.ts:86:13)
-
-    console.log
-      2: Letters
-
-      at toShortForm (src/objects.ts:88:13)
-
-    console.log
-      Colors
-
-      at toShortForm (src/objects.ts:86:13)
-
-    console.log
-      5: Colors
-
-      at toShortForm (src/objects.ts:88:13)
-
-    console.log
-      Shapes
-
-      at toShortForm (src/objects.ts:86:13)
-
-    console.log
-      9: Shapes
-
-      at toShortForm (src/objects.ts:88:13)
-
-    console.log
-      My New Que
-
-      at toShortForm (src/objects.ts:86:13)
-
-    console.log
-      47: My New Que
-
-      at toShortForm (src/objects.ts:88:13)
-
-    console.log
-
-
-      at toMarkdown (src/objects.ts:128:13)
-
-    console.log
-
-
-      at toMarkdown (src/objects.ts:128:13)
-
-    console.log
-      
-      - red
-      - apple
-      - firetruck
-
-      at toMarkdown (src/objects.ts:128:13)
-
-    console.log
-      
-      - square
-      - triangle
-      - circle
-
-      at toMarkdown (src/objects.ts:128:13)
 
     console.log
       Copy of Addition 9
@@ -114,18 +44,20 @@ PASS src/App.test.tsx
 ----------------|---------|----------|---------|---------|-------------------
 File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ----------------|---------|----------|---------|---------|-------------------
-All files       |   97.98 |    91.25 |     100 |   97.98 |                   
- src            |   97.98 |    91.25 |     100 |   97.98 |                   
+All files       |   98.67 |    92.78 |     100 |   98.67 |                   
+ src            |   98.67 |    92.78 |     100 |   98.67 |                   
   App.tsx       |     100 |      100 |     100 |     100 |                   
   arrays.ts     |     100 |      100 |     100 |     100 |                   
   functions.ts  |    90.9 |    84.44 |     100 |    90.9 | 33,37,39          
+  nested.ts     |     100 |      100 |     100 |     100 |                   
   objects.ts    |     100 |      100 |     100 |     100 |                   
  src/interfaces |       0 |        0 |       0 |       0 |                   
+  answer.ts     |       0 |        0 |       0 |       0 |                   
   question.ts   |       0 |        0 |       0 |       0 |                   
 ----------------|---------|----------|---------|---------|-------------------
 
-Test Suites: 6 passed, 6 total
-Tests:       33 passed, 33 total
+Test Suites: 7 passed, 7 total
+Tests:       49 passed, 49 total
 Snapshots:   0 total
-Time:        4.739 s
+Time:        6.771 s
 Ran all test suites.
