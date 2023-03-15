@@ -15,32 +15,17 @@ export function fahrenheitToCelius(temperature: number): number {
  * if the number is greater than zero.
  */
 export function add3(first: number, second: number, third: number): number {
-    // const nums: Array<number> = [first, second, third];
-    // let summ : number = 0.0;
-    // for (let i = 0; i < nums.length; i++) {
-    //     if (nums[i] > 0) {
-    //         summ += nums[i];
-    //     }
-    // }
-    let sum: number;
-    if (first > 0 && second > 0 && third > 0) {
-        sum = first + second + third;
-    } else if (first > 0 && second > 0 && third < 0) {
-        sum = first + second;
-    } else if (first > 0 && second < 0 && third > 0) {
-        sum = first + third;
-    } else if (first < 0 && second > 0 && third > 0) {
-        sum = second + third;
-    } else if (first < 0 && second < 0 && third > 0) {
-        sum = third;
-    } else if (first < 0 && second > 0 && third < 0) {
-        sum = second;
-    } else if (first > 0 && second < 0 && third < 0) {
-        sum = first;
-    } else {
-        sum = 0;
-    }
-    return sum;
+    const nums: number[] = [first, second, third];
+
+    const greaterZero: number[] = nums.filter(
+        (elementN: number): boolean => elementN > 0
+    );
+
+    const total: number = greaterZero.reduce(
+        (currentTotal: number, num: number) => currentTotal + num,
+        0
+    );
+    return total;
 }
 
 /**
