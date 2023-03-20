@@ -1,16 +1,15 @@
 {
   "files": {
     "main.css": "/tasks/static/css/main.f1af7cbf.css",
-    "main.js": "/tasks/static/js/main.4c9b521a.js",
+    "main.js": "/tasks/static/js/main.16c04b7c.js",
     "static/js/787.4ef7427d.chunk.js": "/tasks/static/js/787.4ef7427d.chunk.js",
-    "static/media/marek-piwnicki-s_fgw1df-_I-unsplash.jpg": "/tasks/static/media/marek-piwnicki-s_fgw1df-_I-unsplash.6c50ceda5ff277420f36.jpg",
     "index.html": "/tasks/index.html",
     "main.f1af7cbf.css.map": "/tasks/static/css/main.f1af7cbf.css.map",
-    "main.4c9b521a.js.map": "/tasks/static/js/main.4c9b521a.js.map",
+    "main.16c04b7c.js.map": "/tasks/static/js/main.16c04b7c.js.map",
     "787.4ef7427d.chunk.js.map": "/tasks/static/js/787.4ef7427d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f1af7cbf.css",
-    "static/js/main.4c9b521a.js"
+    "static/js/main.16c04b7c.js"
   ]
 }
