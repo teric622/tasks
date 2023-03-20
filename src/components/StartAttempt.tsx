@@ -24,34 +24,26 @@ export function StartAttempt(): JSX.Element {
     const [attempts, setAttempts] = useState(4);
     const [progress, setProgress] = useState(false);
 
+    const quizStart = (): void => {
+        setProgress(true);
+        setAttempts(attempts - 1);
+    };
     const increment = (): void => {
         setAttempts(attempts + 1);
-    };
-    const decrement = (): void => {
-        console.log(attempts - 1);
-        setAttempts(attempts - 1);
-        setProgress(true);
     };
 
     return (
         <div>
             <div>{attempts}</div>
-            <Button id="Start Quiz" onClick={decrement} disabled={progress}>
+            <Button onClick={quizStart} disabled={progress || attempts == 0}>
                 Start Quiz
             </Button>
-            ;
-            <Button
-                id="Stop Quiz"
-                onClick={() => setProgress(false)}
-                disabled={!progress}
-            >
+            <Button onClick={() => setProgress(false)} disabled={!progress}>
                 Stop Quiz
             </Button>
-            ;
-            <Button id="Mulligan" onClick={increment} disabled={progress}>
+            <Button onClick={increment} disabled={progress}>
                 Mulligan
             </Button>
-            ;
         </div>
     );
 }
