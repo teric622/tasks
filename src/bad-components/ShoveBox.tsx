@@ -1,6 +1,20 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
+/**
+ * The ShoveBox component provides a button that moves an adjacent box farther away, 
+ * by increasing the boxes left margin.
+
+Currently, part of the component’s returned body is commented
+ out because it is broken and crashes your application. 
+ Uncomment the component’s body in src/ShoveBox.tsx and then 
+ fix the Component so that it works correctly.
+
+You must NOT add or remove components; you can only modify the existing components.
+ * 
+ *  
+ */
+
 function ShoveBoxButton({
     position,
     setPosition
