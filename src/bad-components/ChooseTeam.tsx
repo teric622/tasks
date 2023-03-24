@@ -38,15 +38,26 @@ export function ChooseTeam(): JSX.Element {
     const [allOptions, setAllOptions] = useState<string[]>(PEOPLE);
     const [team, setTeam] = useState<string[]>([]);
 
-    function chooseMember() {
-        /*
+    function chooseMember(person: string) {
+        // going to have to pass in option (person)
+        /* map through team, if person not in team, then update state of team with that person added
+        const teamCopy = [...team]
+
         if (!team.includes(newMember)) {
             team.push(newMember);
         }
         */
+        const isIn = team.includes(person);
+        if (isIn == false) {
+            const teamCopy = [...team, person];
+            setTeam(teamCopy);
+        }
     }
 
     function clearTeam() {
+        // update state of clear team to = an empty array
+        // const teamCopy = [...team];
+        setTeam([]);
         /*
         team = [];
         */
@@ -60,7 +71,10 @@ export function ChooseTeam(): JSX.Element {
                     {allOptions.map((option: string) => (
                         <div key={option} style={{ marginBottom: "4px" }}>
                             Add{" "}
-                            <Button onClick={chooseMember} size="sm">
+                            <Button
+                                onClick={() => chooseMember(option)}
+                                size="sm"
+                            >
                                 {option}
                             </Button>
                         </div>

@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 /**
- * The ColoredBox component provides a single button that cycles through a list of colors, 
- * updating a box off to its right.
+The ColoredBox component provides a single button that cycles through a list of colors, updating a box off to its right.
 
-Currently, the component does not work,
- since the box always stays the same color when clicked. 
- Fix the state so the component works correctly.
+Currently, the component does not work, since the box always stays the same color when clicked. Fix the state so the component works correctly.
 
 You must NOT add or remove components; you can only modify the existing components.
  */
