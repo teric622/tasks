@@ -61,7 +61,7 @@ export function ChangeColor(): JSX.Element {
             </div>
         );
     }
-    const [response, setResponse] = useState<string>("good");
+    const [response, setResponse] = useState<string>(" ");
     return (
         <div>
             <h3>Change Color</h3>
@@ -146,7 +146,7 @@ export function ChangeColor(): JSX.Element {
                 checked={response === "white"}
             />
             <div>
-                The response is{" "}
+                You have chosen{" "}
                 {<ColorPreview newIndex={response}></ColorPreview>}.
             </div>
         </div>
