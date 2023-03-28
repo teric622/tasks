@@ -1,6 +1,7 @@
 .App {
     text-align: center;
-    width:100vw
+    width:100vw;
+    background-color: #ffe6ba;
 }
 
 .App-logo {
