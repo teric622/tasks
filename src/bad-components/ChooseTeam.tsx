@@ -39,19 +39,10 @@ export function ChooseTeam(): JSX.Element {
     const [team, setTeam] = useState<string[]>([]);
 
     function chooseMember(person: string) {
-        // going to have to pass in option (person)
-        /* map through team, if person not in team, then update state of team with that person added
-        const teamCopy = [...team]
-
-        if (!team.includes(newMember)) {
-            team.push(newMember);
+        if (!team.includes(person)) {
+            setTeam([...team, person]);
         }
-        */
-        const isIn = team.includes(person);
-        if (isIn == false) {
-            const teamCopy = [...team, person];
-            setTeam(teamCopy);
-        }
+        return;
     }
 
     function clearTeam() {
