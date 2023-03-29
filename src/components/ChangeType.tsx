@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { QuestionType } from "../interfaces/question";
@@ -22,20 +21,27 @@ export function ChangeType(): JSX.Element {
     const [questionType, setQuestionType] = useState<QuestionType>(
         "multiple_choice_question"
     );
-
-
     const changeQuestion = (): void => {
         console.log("before");
         console.log(questionType);
         setQuestionType(
-            questionType === "short_answer_question" ? "multiple_choice_question": "short_answer_question"
+            questionType === "short_answer_question"
+                ? "multiple_choice_question"
+                : "short_answer_question"
         );
         console.log("after");
         console.log(questionType);
     };
-    return (<div>
-        {/* <div>{questionType}</div>; */}
-        <Button id="Change Type" onClick={changeQuestion}>Change Type</Button>
-        <div>{questionType == "short_answer_question" ? "Multiple Choice":"Short Answer"}</div>
-    </div>);
+    return (
+        <div>
+            <Button id="Change Type" onClick={changeQuestion}>
+                Change Type
+            </Button>
+            <div>
+                {questionType == "short_answer_question"
+                    ? "Multiple Choice"
+                    : "Short Answer"}
+            </div>
+        </div>
+    );
 }

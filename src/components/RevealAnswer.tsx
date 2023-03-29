@@ -1,8 +1,5 @@
-/* eslint-disable indent */
-/* eslint-disable prettier/prettier */
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-
 /***
  * 
 The RevealAnswer component simulates a quiz application that provides a way to “reveal
@@ -18,12 +15,12 @@ export function RevealAnswer(): JSX.Element {
     const changeAnswer = (): void => {
         setAnswer(!answer);
     };
-    return(
+    return (
         <div>
-        <Button id="Reveal Answer" onClick={changeAnswer}>Reveal Answer</Button>
-        {
-            answer == false ? "" : <div>42</div>
-        }
+            <Button id="Reveal Answer" onClick={changeAnswer}>
+                Reveal Answer
+            </Button>
+            {answer == false ? "" : <div>42</div>}
         </div>
     );
 }
