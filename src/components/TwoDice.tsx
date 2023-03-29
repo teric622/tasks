@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
 /**
+ * had to disable indent, regardless of how i reformatted, cleaned, prettier and eslint indent would always
+ * counter act one another i.e indent says spaces expected 24, but prettier would say to remove spaces and when 
+ * 24 spaces were met prettiere errored it and vice versa
  * Here is a helper function you *must* use to "roll" your die.
  * The function uses the builtin `random` function of the `Math`
  * module (which returns a random decimal between 0 up until 1) in order
