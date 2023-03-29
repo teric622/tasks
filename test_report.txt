@@ -51,62 +51,62 @@ PASS src/components/ChangeType.test.tsx
     console.log
       before
 
-      at changeQuestion (src/components/ChangeType.tsx:28:17)
+      at changeQuestion (src/components/ChangeType.tsx:25:17)
 
     console.log
       multiple_choice_question
 
-      at changeQuestion (src/components/ChangeType.tsx:29:17)
+      at changeQuestion (src/components/ChangeType.tsx:26:17)
 
     console.log
       after
 
-      at changeQuestion (src/components/ChangeType.tsx:33:17)
+      at changeQuestion (src/components/ChangeType.tsx:32:17)
 
     console.log
       multiple_choice_question
 
-      at changeQuestion (src/components/ChangeType.tsx:34:17)
+      at changeQuestion (src/components/ChangeType.tsx:33:17)
 
     console.log
       before
 
-      at changeQuestion (src/components/ChangeType.tsx:28:17)
+      at changeQuestion (src/components/ChangeType.tsx:25:17)
 
     console.log
       multiple_choice_question
 
-      at changeQuestion (src/components/ChangeType.tsx:29:17)
+      at changeQuestion (src/components/ChangeType.tsx:26:17)
 
     console.log
       after
 
-      at changeQuestion (src/components/ChangeType.tsx:33:17)
+      at changeQuestion (src/components/ChangeType.tsx:32:17)
 
     console.log
       multiple_choice_question
 
-      at changeQuestion (src/components/ChangeType.tsx:34:17)
+      at changeQuestion (src/components/ChangeType.tsx:33:17)
 
     console.log
       before
 
-      at changeQuestion (src/components/ChangeType.tsx:28:17)
+      at changeQuestion (src/components/ChangeType.tsx:25:17)
 
     console.log
       short_answer_question
 
-      at changeQuestion (src/components/ChangeType.tsx:29:17)
+      at changeQuestion (src/components/ChangeType.tsx:26:17)
 
     console.log
       after
 
-      at changeQuestion (src/components/ChangeType.tsx:33:17)
+      at changeQuestion (src/components/ChangeType.tsx:32:17)
 
     console.log
       short_answer_question
 
-      at changeQuestion (src/components/ChangeType.tsx:34:17)
+      at changeQuestion (src/components/ChangeType.tsx:33:17)
 
 PASS src/components/CycleHoliday.test.tsx
 PASS src/form-components/GiveAttempts.test.tsx
@@ -283,5 +283,5 @@ All files                    |     100 |    98.93 |     100 |     100 |
 Test Suites: 20 passed, 20 total
 Tests:       134 passed, 134 total
 Snapshots:   0 total
-Time:        12.844 s
+Time:        11.673 s
 Ran all test suites.
